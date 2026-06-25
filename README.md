@@ -67,9 +67,25 @@ Tools to optimize professional representation across application channels.
 
 ## Installation & Usage
 
-To make these skills available to your AI agent, place them in one of the recognized customization roots.
+### Adding Skills via CLI (Recommended)
 
-### Global Installation
+You can add these skills to your workspace using the `skills` CLI:
+
+- **Interactive Selection**: Run this command to list all available skills in the repository and select the ones to add:
+  ```bash
+  npx skills add sriram789/agentic-skills
+  ```
+
+- **Add an Individual Skill**: To add a specific skill directly, use the `--skill` flag:
+  ```bash
+  npx skills add sriram789/agentic-skills --skill your-skill-name
+  ```
+
+### Manual Installation
+
+To manually install these skills, place the skill directories in one of the recognized customization roots.
+
+#### Global Installation
 
 To make skills available across all projects, copy the skill directories to your global configuration directory:
 
@@ -77,7 +93,7 @@ To make skills available across all projects, copy the skill directories to your
 cp -r skills/* ~/.gemini/config/skills/
 ```
 
-### Project-Scoped Installation
+#### Project-Scoped Installation
 
 To activate skills only for a specific workspace, copy them to a `.agents/skills/` directory at the root of the workspace:
 
@@ -85,8 +101,6 @@ To activate skills only for a specific workspace, copy them to a `.agents/skills
 mkdir -p .agents/skills/
 cp -r skills/* .agents/skills/
 ```
-
-Once placed in these directories, the agent will automatically discover the skills. No manual registration is required.
 
 ---
 
